@@ -25,9 +25,14 @@ __pycache__/
 # 本地部署回归测试的假 DSH home（可随时用 DSH_HOME 指向它复现，见 SYNC.md）
 tmp-sync-test/
 
-# 偏好存储挪进工作区后（见 SYNC.md 第 5 节），会话投影缓存是纯缓存、按会话 id 分文件，
-# 没有同步价值，只会制造 git 噪音。
-.dsh/storages/session_projcache/
+# 偏好存储挪进工作区后（见 SYNC.md 第 3 节）：storages/ 下**只保留 memory/**。
+# 偏好记录是一个 key 一个文件，改不同条目能干净合并；其余都是每台机器自己的东西：
+#   - workspace.json      各机会话索引，两端都会改写 ⇒ 每次提交都冲突，且 B 机拿到的
+#                         会话 id 在本地没有对应日志，列表里会是空壳
+#   - session_projcache/  纯缓存，按会话 id 分文件，无同步价值
+.dsh/storages/*
+!.dsh/storages/memory/
+!.dsh/storages/memory/**
 
 # 例外：yaml-check 的依赖要入库。
 # 部署脚本用其中的 js-yaml 校验 cordis.patch.yml，体积仅 1.66 MB；
