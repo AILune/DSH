@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "record": {
+    "text": "用户是温序，2027 届毕业生，正在准备 27 届秋招，目标岗位是 Java 开发工程师和 AI 应用研发工程师；涉及简历、项目包装、八股/算法准备、面试复盘等事项时按这两个岗位方向来对齐。",
+    "kind": "working",
+    "scope": "global",
+    "tags": [
+      "身份",
+      "求职",
+      "秋招",
+      "目标岗位"
+    ],
+    "evidence": "user-stated",
+    "createdAt": 1791370263497,
+    "updatedAt": 1791370263497,
+    "lastInjectedAt": 1791376310536,
+    "injectCount": 2,
+    "injectedSessions": [
+      "session-b50d5537-da93-4704-b2d0-0429dad12493",
+      "session-0ed05b86-c3da-4f2c-a076-bc0aea8a0c5f"
+    ]
+  }
+}

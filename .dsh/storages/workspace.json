@@ -1,0 +1,38 @@
+{
+  "unit": {
+    "name": "workspace",
+    "version": 2
+  },
+  "global": {
+    "initialized": true,
+    "workspaceIds": [
+      "824972c2-d720-4b82-bdf6-e21d2620d2ed"
+    ],
+    "archivedSessionIds": [],
+    "pinnedSessionIds": []
+  },
+  "tables": {
+    "workspaces": {
+      "824972c2-d720-4b82-bdf6-e21d2620d2ed": {
+        "path": "D:\\文档\\deepseek-harness\\default-workspace",
+        "title": "default-workspace",
+        "sessionIds": [
+          "session-0ed05b86-c3da-4f2c-a076-bc0aea8a0c5f",
+          "7a7f0d15-f8f8-4c52-98d7-e67af55f2e47",
+          "session-43657d50-e160-4a05-8bbf-db6167b8c9f9",
+          "session-a3d7d5b2-9b92-4db8-b494-40ff42fb5392",
+          "session-24142903-7b93-4e23-8cd2-9bb85729fa6e",
+          "session-4a9c393a-b386-411b-ae53-0d64f0537285",
+          "session-9ae36e3b-a762-4571-a597-eb7b300b271f",
+          "2f2f9303-bb08-47be-97ba-580229373311",
+          "b7478051-92ce-4cd8-a43e-8649aa61b52c",
+          "session-62d8e1ff-b06d-41b9-afcd-42ace23ae95a",
+          "session-d416e3a7-0c61-4a86-b70d-63a4f03f7238",
+          "session-b50d5537-da93-4704-b2d0-0429dad12493"
+        ],
+        "createdAt": "2026-10-07T10:52:16.679Z",
+        "updatedAt": "2026-10-07T10:52:16.679Z"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "record": {
+    "text": "用户明确要求：偏好（常驻规则层）的读取时机是「新会话开场一次性加载、写入系统提示词作为 Agent 底层约束」，不要每轮 LLM 调用都重新检索；只有会话内改动了偏好才重新加载。",
+    "kind": "working",
+    "scope": "global",
+    "tags": [
+      "记忆",
+      "读取时机",
+      "常驻规则层",
+      "系统提示词"
+    ],
+    "evidence": "user-stated",
+    "createdAt": 1791369623509,
+    "updatedAt": 1791369623509,
+    "lastInjectedAt": 1791376310536,
+    "injectCount": 2,
+    "injectedSessions": [
+      "session-b50d5537-da93-4704-b2d0-0429dad12493",
+      "session-0ed05b86-c3da-4f2c-a076-bc0aea8a0c5f"
+    ]
+  }
+}

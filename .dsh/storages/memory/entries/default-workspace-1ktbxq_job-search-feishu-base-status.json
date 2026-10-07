@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "record": {
+    "text": "求职进度记录在飞书多维表格（base_token EgB0bvTmGaj8vEsRYHhcN0kgnnd，table_id tblZ6JiLi8jUV6Fe，工作表「招聘进度」）。更新状态时只能用「状态」字段已有的选项（如「简历评估中」），不要新建选项；该表无法用 docs 读取（会报 3380002），必须走 base 接口。",
+    "kind": "working",
+    "scope": "workspace",
+    "workspace": "D:\\文档\\deepseek-harness\\default-workspace",
+    "tags": [],
+    "evidence": "user-stated",
+    "createdAt": 1791085012276,
+    "updatedAt": 1791085012276,
+    "lastInjectedAt": 1791376310536,
+    "injectCount": 7,
+    "injectedSessions": [
+      "session-9ae36e3b-a762-4571-a597-eb7b300b271f",
+      "session-4a9c393a-b386-411b-ae53-0d64f0537285",
+      "session-24142903-7b93-4e23-8cd2-9bb85729fa6e",
+      "session-b50d5537-da93-4704-b2d0-0429dad12493",
+      "session-43657d50-e160-4a05-8bbf-db6167b8c9f9",
+      "7a7f0d15-f8f8-4c52-98d7-e67af55f2e47",
+      "session-0ed05b86-c3da-4f2c-a076-bc0aea8a0c5f"
+    ]
+  }
+}
