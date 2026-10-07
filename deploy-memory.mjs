@@ -20,7 +20,11 @@ console.log("DSH home:", resolveDshHome());
 console.log("profile :", PROFILE);
 console.log("\n=== 1. 备份 profile/package.json ===");
 const pmPath = path.join(PROFILE, "package.json");
-const bundlesBefore = [...(JSON.parse(fs.readFileSync(pmPath, "utf8")).dsh?.profile?.bundles ?? [])];
+const pmBefore = JSON.parse(fs.readFileSync(pmPath, "utf8"));
+const bundlesBefore = [...(pmBefore.dsh?.profile?.bundles ?? [])];
+// 全新机器上 profile 是空的（bundles 只有 base/web-app、没有任何插件依赖），
+// 所以下面所有断言都必须基于「部署前的样子」，不能假设别的插件已经装好。
+const depsBefore = { ...(pmBefore.dependencies ?? {}) };
 const bak = `${pmPath}.pre-${NAME}-${stamp}`;
 fs.copyFileSync(pmPath, bak);
 console.log("  ->", path.basename(bak));
@@ -73,7 +77,16 @@ check("patch 无 BOM", !(fs.readFileSync(path.join(dest, "cordis.patch.yml"))[0]
 
 // profile package.json
 const pmAfter = JSON.parse(fs.readFileSync(pmPath, "utf8"));
-check("lark-doc 依赖条目未被破坏", typeof pmAfter.dependencies["dsh-plugin-lark-doc"] === "string", pmAfter.dependencies["dsh-plugin-lark-doc"]);
+// 本脚本只写自己的依赖条目，其余条目必须一字未动。
+// 旧版本在这里写死「lark-doc 依赖必须存在」——全新机器上它还没装，会误报失败。
+const depsTouched = Object.entries(pmAfter.dependencies ?? {}).filter(([k, v]) => k !== NAME && depsBefore[k] !== v);
+check(
+  "未改动本插件以外的依赖条目",
+  depsTouched.length === 0,
+  depsTouched.length === 0
+    ? `原有 ${Object.keys(depsBefore).length} 项原样保留${depsBefore["dsh-plugin-lark-doc"] === undefined ? "（lark-doc 本次部署前未安装）" : ""}`
+    : JSON.stringify(depsTouched),
+);
 check("memory bundle 已启用", pmAfter.dsh.profile.bundles.includes(NAME), JSON.stringify(pmAfter.dsh.profile.bundles));
 check("base/web-app 两个基础 bundle 保留", pmAfter.dsh.profile.bundles.includes("@deepseek-ai/dsh-base") && pmAfter.dsh.profile.bundles.includes("@deepseek-ai/dsh-web-app"));
 // 与 lark-doc 的启用状态无关 —— 只断言「没移除任何原有条目」。

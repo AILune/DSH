@@ -62,6 +62,8 @@ for (const rel of ["package.json", "cordis.patch.yml", path.join("lib", "index.j
 console.log("\n=== 3. 登记依赖 + 启用 bundle（唯一的挂载动作）===");
 const pm = JSON.parse(fs.readFileSync(pmPath, "utf8"));
 const bundlesBefore = [...(pm.dsh?.profile?.bundles ?? [])];
+// 全新机器上别的插件可能还没装，断言必须基于「部署前的样子」。
+const depsBefore = { ...(pm.dependencies ?? {}) };
 pm.dependencies ??= {};
 pm.dependencies[NAME] = `file:${path.join(PROFILE, "node_modules", NAME).replace(/\\/g, "/")}`;
 pm.dsh ??= {};
@@ -120,7 +122,14 @@ const removed = bundlesBefore.filter((b) => !bundlesAfter.includes(b));
 check("bundle 列表只新增本插件、未移除任何条目", removed.length === 0 && added.every((a) => a === NAME), `added=${JSON.stringify(added)} removed=${JSON.stringify(removed)}`);
 check("本插件已启用", bundlesAfter.includes(NAME));
 check("基础 bundle 保留", bundlesAfter.includes("@deepseek-ai/dsh-base") && bundlesAfter.includes("@deepseek-ai/dsh-web-app"));
-check("lark-doc 依赖未被破坏", typeof pmAfter.dependencies["dsh-plugin-lark-doc"] === "string");
+const depsTouched = Object.entries(pmAfter.dependencies ?? {}).filter(([k, v]) => k !== NAME && depsBefore[k] !== v);
+check(
+  "未改动本插件以外的依赖条目",
+  depsTouched.length === 0,
+  depsTouched.length === 0
+    ? `原有 ${Object.keys(depsBefore).length} 项原样保留${depsBefore["dsh-plugin-lark-doc"] === undefined ? "（lark-doc 本次部署前未安装）" : ""}`
+    : JSON.stringify(depsTouched),
+);
 
 const req = createRequire(path.join(PROFILE, "package.json"));
 for (const spec of [NAME, `${NAME}/locale/zh.json`, `${NAME}/package.json`]) {

@@ -105,7 +105,17 @@ check("patch 无 BOM", fs.readFileSync(path.join(dest, "cordis.patch.yml"))[0] !
 
 const pmAfter = JSON.parse(fs.readFileSync(pmPath, "utf8"));
 check("lark-doc 已在 bundles 中（本次启用的目标）", pmAfter.dsh.profile.bundles.includes(NAME));
-check("另外两个插件 bundle 保留", pmAfter.dsh.profile.bundles.includes("dsh-plugin-memory") && pmAfter.dsh.profile.bundles.includes("dsh-plugin-working-memory"));
+// 只断言「没有改变另外两个插件的启用状态」。全新机器上它们可能还没装，
+// 旧版本在这里写死「两个都必须已在 bundles 中」，那台新机器上会误报失败。
+const others = ["dsh-plugin-memory", "dsh-plugin-working-memory"];
+const othersChanged = others.filter((o) => bundlesBefore.includes(o) !== pmAfter.dsh.profile.bundles.includes(o));
+check(
+  "另外两个插件的启用状态未被改动",
+  othersChanged.length === 0,
+  othersChanged.length === 0
+    ? others.map((o) => `${o}=${bundlesBefore.includes(o) ? "已启用(保留)" : "本次部署前未启用"}`).join("  ")
+    : JSON.stringify(othersChanged),
+);
 check("base/web-app 两个基础 bundle 保留", pmAfter.dsh.profile.bundles.includes("@deepseek-ai/dsh-base") && pmAfter.dsh.profile.bundles.includes("@deepseek-ai/dsh-web-app"));
 // 注意用 every 而不是 length===1：重跑时本插件已在 bundles 中，added 为空数组也应通过。
 const added = pmAfter.dsh.profile.bundles.filter((b) => !bundlesBefore.includes(b));
