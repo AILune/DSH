@@ -1,0 +1,213 @@
+{
+  "manifest_version": "v1",
+  "format": "ndjson",
+  "base_token": "EgB0bvTmGaj8vEsRYHhcN0kgnnd",
+  "table_id": "tblZ6JiLi8jUV6Fe",
+  "rev": 1173,
+  "timezone": "Asia/Shanghai",
+  "query_context": {
+    "field_scope": "all_fields",
+    "record_scope": "all_records"
+  },
+  "requested_limit": 3,
+  "records_count": 3,
+  "page_count": 1,
+  "has_more": true,
+  "next_offset": 3,
+  "record_file": "D:\\文档\\deepseek-harness\\default-workspace\\lark-records-sample.ndjson",
+  "record_file_size_bytes": 1246,
+  "manifest_file": "D:\\文档\\deepseek-harness\\default-workspace\\lark-records-sample.manifest.json",
+  "columns": {
+    "Base 地": {
+      "field_id": "fld77llRVX",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 1,
+        "max_length": 1,
+        "avg_length": 0.6666666666666666
+      },
+      "example": [
+        "杭州"
+      ]
+    },
+    "record_id": {
+      "physical_type": "string",
+      "stats": {
+        "max_length": 10
+      },
+      "example": "receszXqrp"
+    },
+    "一面时间": {
+      "field_id": "fldaFlzeXm",
+      "field_type": "datetime",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 1,
+        "min": "2026-10-15T00:00:00.000+08:00",
+        "max": "2026-10-15T00:00:00.000+08:00"
+      },
+      "example": "2026-10-15T00:00:00.000+08:00"
+    },
+    "三面时间": {
+      "field_id": "fldRlOT1oA",
+      "field_type": "datetime",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "二面时间": {
+      "field_id": "fld4zexPP4",
+      "field_type": "datetime",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 2,
+        "min": "2026-11-05T00:00:00.000+08:00",
+        "max": "2026-11-05T00:00:00.000+08:00"
+      },
+      "example": "2026-11-05T00:00:00.000+08:00"
+    },
+    "公司": {
+      "field_id": "fld9pYRnDk",
+      "field_type": "text",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 1,
+        "max_length": 2
+      },
+      "example": "淘天"
+    },
+    "公司类型": {
+      "field_id": "fldU0galGO",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 3,
+        "max_length": 0,
+        "avg_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "岗位": {
+      "field_id": "fldnf8th8T",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 1,
+        "max_length": 1,
+        "avg_length": 0.6666666666666666
+      },
+      "example": [
+        "AI 应用研发工程师"
+      ]
+    },
+    "工作强度": {
+      "field_id": "fldxaqDd0g",
+      "field_type": "text",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3,
+        "max_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "已发offer": {
+      "field_id": "fldWhaSwNG",
+      "field_type": "checkbox",
+      "physical_type": "boolean",
+      "stats": {
+        "true_count": 0
+      },
+      "example": false
+    },
+    "应聘部门": {
+      "field_id": "fldZqRFKvK",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 2,
+        "max_length": 1,
+        "avg_length": 0.3333333333333333
+      },
+      "example": [
+        "淘工厂"
+      ]
+    },
+    "是否完成测评/笔试": {
+      "field_id": "fldZ1Cvvvm",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 3,
+        "max_length": 0,
+        "avg_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "流程结束时间": {
+      "field_id": "fldPm6hTYi",
+      "field_type": "datetime",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "父记录": {
+      "field_id": "fld1MTyE35",
+      "field_type": "link",
+      "physical_type": "array<struct<id string>>",
+      "stats": {
+        "empty_count": 3,
+        "max_length": 0,
+        "avg_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "状态": {
+      "field_id": "fld0mXGYiF",
+      "field_type": "select",
+      "physical_type": "array<string>",
+      "stats": {
+        "empty_count": 1,
+        "max_length": 1,
+        "avg_length": 0.6666666666666666
+      },
+      "example": [
+        "简历挂"
+      ]
+    },
+    "社保公积金": {
+      "field_id": "fldBmUoDBr",
+      "field_type": "text",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3,
+        "max_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "笔试时间": {
+      "field_id": "fldidHwIjF",
+      "field_type": "text",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3,
+        "max_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    },
+    "薪资参考": {
+      "field_id": "fldzgSJATu",
+      "field_type": "text",
+      "physical_type": "string|null",
+      "stats": {
+        "null_count": 3,
+        "max_length": 0
+      },
+      "hint": "All values are empty; type inference may be ambiguous. Avoid analyzing this column unless required."
+    }
+  }
+}

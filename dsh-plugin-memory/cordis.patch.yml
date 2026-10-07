@@ -1,0 +1,15 @@
+# dsh-plugin-memory bundle patch：把跨会话工作记忆插件挂载进组合。
+#
+# 与 dsh-time-context / dsh-agent-instructions 同构：一个 insert 挂载自身。
+# 本文件是唯一的挂载来源：profile 通过 dsh.profile.bundles 引入本包，
+# bundle 层读出这里并挂载。GUI 的插件开关改的就是 dsh.profile.bundles，因此开关有效。
+# 若要在 profile 里覆盖本文件 config 的某个字段，可另加一条同 id（memory）的条目 ——
+# 组装顺序是 bundles → cordis.patch.yml → overlays，后写的层获胜。
+
+- insert:
+    - id: memory
+      name: dsh-plugin-memory
+      config:
+        maxInject: 24
+        maxEntryChars: 500
+        mirror: true

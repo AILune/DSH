@@ -1,0 +1,42 @@
+# ============================================================
+# 1. 本机凭据与隐私 —— 必须在 git init 之前就生效
+#    凭据一旦进入提交历史，事后很难彻底清除。
+# ============================================================
+mail-auth-code.txt
+mail-auth-code.txt.txt
+mail-raw.json
+mail-hits.ndjson
+lark-auth-qr.png
+forge_cookie.py
+check_dsh_cookie.py
+token_watch.py
+token_lifetime.py
+token-watch.log
+session-dump.jsonl
+
+# ============================================================
+# 2. 体积大或可重建
+# ============================================================
+node_modules/
+lark-cli-repo/
+__pycache__/
+*.log
+
+# 本地部署回归测试的假 DSH home（可随时用 DSH_HOME 指向它复现，见 SYNC.md）
+tmp-sync-test/
+
+# 偏好存储挪进工作区后（见 SYNC.md 第 5 节），会话投影缓存是纯缓存、按会话 id 分文件，
+# 没有同步价值，只会制造 git 噪音。
+.dsh/storages/session_projcache/
+
+# 例外：yaml-check 的依赖要入库。
+# 部署脚本用其中的 js-yaml 校验 cordis.patch.yml，体积仅 1.66 MB；
+# 入库可换取「另一台机器克隆后无需 npm install 即可部署」。
+!yaml-check/node_modules/
+!yaml-check/node_modules/**
+
+# ============================================================
+# 3. 说明
+# ============================================================
+# .dsh/ 刻意**不**忽略：里面是工作记忆（.dsh/work/<会话id>/ 与 .dsh/WORKING.md），
+# 正是需要跨机器同步的内容。它按会话 id 分目录，两台机器不会写同一个文件。

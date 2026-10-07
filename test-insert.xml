@@ -1,0 +1,1 @@
+<h2>验证结果</h2><p>CREATE / READ / UPDATE 三项均已通过 DSH 实测。</p><ul><li>创建：docs +create（Markdown 导入）</li><li>读取：docs +fetch（内容逐字一致）</li><li>编辑：docs +update（str_replace + block_insert_after）</li></ul>

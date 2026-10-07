@@ -1,0 +1,679 @@
+{
+  "ok": true,
+  "identity": "user",
+  "data": {
+    "fields": [
+      {
+        "default_value": null,
+        "id": "fldidHwIjF",
+        "name": "笔试时间",
+        "style": {
+          "type": "plain"
+        },
+        "type": "text"
+      },
+      {
+        "default_value": null,
+        "id": "fld0mXGYiF",
+        "multiple": false,
+        "name": "状态",
+        "options": [
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "待投递"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "待简历评估"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "简历评估中"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "测评中"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "笔试中"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "AI 面试中"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "简历挂"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "一面中"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "二面中"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "待安排面试"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "三面中"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "一面挂"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "加面中"
+          }
+        ],
+        "type": "select"
+      },
+      {
+        "default_value": null,
+        "id": "fldRlOT1oA",
+        "name": "三面时间",
+        "style": {
+          "format": "yyyy/MM/dd HH:mm"
+        },
+        "type": "datetime"
+      },
+      {
+        "default_value": null,
+        "id": "fldZ1Cvvvm",
+        "multiple": true,
+        "name": "是否完成测评/笔试",
+        "options": [
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "完成测评"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "完成笔试"
+          }
+        ],
+        "type": "select"
+      },
+      {
+        "default_value": null,
+        "id": "fldU0galGO",
+        "multiple": true,
+        "name": "公司类型",
+        "options": [
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "游戏"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "互联网"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "汽车"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "物流"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "电商"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "零售"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "银行"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "3D打印"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "直播"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "央国企"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "外企"
+          }
+        ],
+        "type": "select"
+      },
+      {
+        "default_value": null,
+        "id": "fldBmUoDBr",
+        "name": "社保公积金",
+        "style": {
+          "type": "plain"
+        },
+        "type": "text"
+      },
+      {
+        "default_value": null,
+        "id": "fldzgSJATu",
+        "name": "薪资参考",
+        "style": {
+          "type": "plain"
+        },
+        "type": "text"
+      },
+      {
+        "default_value": null,
+        "id": "fldaFlzeXm",
+        "name": "一面时间",
+        "style": {
+          "format": "yyyy/MM/dd HH:mm"
+        },
+        "type": "datetime"
+      },
+      {
+        "default_value": null,
+        "id": "fldnf8th8T",
+        "multiple": false,
+        "name": "岗位",
+        "options": [
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "软件开发工程师"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "AI 应用研发工程师"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "后端开发工程师"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "智能体与大模型应用工程师"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "AI 后端开发工程师"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "服务端研发工程师"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "软件质量工程师"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "AI全栈开发工程师"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "Agent研发工程师"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "电子信息类"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "研发工程师"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "系统开发工程师"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "总行IT校招生（AI方向）"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "信息技术岗"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "信息科技岗"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "科技菁英"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "科技类专项"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "系统研发工程师"
+          }
+        ],
+        "type": "select"
+      },
+      {
+        "default_value": null,
+        "id": "fld4zexPP4",
+        "name": "二面时间",
+        "style": {
+          "format": "yyyy/MM/dd HH:mm"
+        },
+        "type": "datetime"
+      },
+      {
+        "default_value": null,
+        "id": "fldPm6hTYi",
+        "name": "流程结束时间",
+        "style": {
+          "format": "yyyy/MM/dd"
+        },
+        "type": "datetime"
+      },
+      {
+        "bidirectional": false,
+        "id": "fld1MTyE35",
+        "link_table": "tblZ6JiLi8jUV6Fe",
+        "name": "父记录",
+        "type": "link"
+      },
+      {
+        "default_value": null,
+        "id": "fld9pYRnDk",
+        "name": "公司",
+        "style": {
+          "type": "plain"
+        },
+        "type": "text"
+      },
+      {
+        "default_value": null,
+        "id": "fldxaqDd0g",
+        "name": "工作强度",
+        "style": {
+          "type": "plain"
+        },
+        "type": "text"
+      },
+      {
+        "default_value": null,
+        "id": "fld77llRVX",
+        "multiple": false,
+        "name": "Base 地",
+        "options": [
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "杭州"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "北京"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "上海"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "深圳"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "长沙"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "广州"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "南京"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "佛山"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "株洲"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "湘潭"
+          }
+        ],
+        "type": "select"
+      },
+      {
+        "default_value": null,
+        "id": "fldZqRFKvK",
+        "multiple": false,
+        "name": "应聘部门",
+        "options": [
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "研发"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "产品"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "设计"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "市场"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "销售"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "运营"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "人事行政"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "淘工厂"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "业务技术-供给技术"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "平台技术"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "Qoder"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "技术部"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "阿里云技术栈"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "羚羊"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "瓴羊"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "Token Foundry"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "千问办公"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "优酷"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "国际化广告商业平台"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "服务与软件研发管理部"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "ICT BG 服务与软件研发管理部"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "发布后端"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "J100737"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "零售金融"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "支付"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "技术中心"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "平台业务中心"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "音乐事业部"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "顺丰科技"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "SCG"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "大装置"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "租车事业部"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "顺风车"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "软件研发中心"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "FDE"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "IT信息化"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "AI向/数据平台"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "云服务"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "数据算法"
+          },
+          {
+            "hue": "Purple",
+            "lightness": "Lighter",
+            "name": "账号/支付/安全平台"
+          },
+          {
+            "hue": "Green",
+            "lightness": "Lighter",
+            "name": "自动驾驶仿真"
+          },
+          {
+            "hue": "Carmine",
+            "lightness": "Lighter",
+            "name": "智能座舱云端"
+          },
+          {
+            "hue": "Lime",
+            "lightness": "Lighter",
+            "name": "支付业务"
+          },
+          {
+            "hue": "Gray",
+            "lightness": "Lighter",
+            "name": "财富业务"
+          },
+          {
+            "hue": "Blue",
+            "lightness": "Lighter",
+            "name": "架构治理中心"
+          },
+          {
+            "hue": "Orange",
+            "lightness": "Lighter",
+            "name": "搜广推方向"
+          },
+          {
+            "hue": "Wathet",
+            "lightness": "Lighter",
+            "name": "国际化方向"
+          },
+          {
+            "hue": "Yellow",
+            "lightness": "Lighter",
+            "name": "瓴羊-营销云"
+          },
+          {
+            "hue": "Turquoise",
+            "lightness": "Lighter",
+            "name": "火山引擎 - AI 算力基础设施"
+          },
+          {
+            "hue": "Red",
+            "lightness": "Lighter",
+            "name": "阿里国际站"
+          }
+        ],
+        "remaining_options_count": 8,
+        "truncated": true,
+        "truncated_options_count": 8,
+        "type": "select"
+      },
+      {
+        "id": "fldWhaSwNG",
+        "name": "已发offer",
+        "type": "checkbox"
+      }
+    ],
+    "total": 17
+  }
+}

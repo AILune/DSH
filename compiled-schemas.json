@@ -1,0 +1,263 @@
+{
+  "lark_doc_create": {
+    "description": "在飞书创建一篇新文档（Docx）。适用于把 Markdown 或结构化内容写成一篇文章、报告、纪要。返回新文档的 document_id 与可访问 URL。若目标是已存在的文档，请改用 lark_doc_read 或 lark_doc_replace。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "文档标题。"
+        },
+        "content": {
+          "type": "string",
+          "description": "文档正文。doc_format=markdown 时传 Markdown；doc_format=xml 时传飞书 DocxXML。"
+        },
+        "doc_format": {
+          "type": "string",
+          "description": "正文格式，默认 markdown。",
+          "enum": [
+            "markdown",
+            "xml"
+          ]
+        },
+        "parent_position": {
+          "type": "string",
+          "description": "创建位置，例如 \"my_library\" 表示我的空间。与 parent_token 互斥。"
+        },
+        "parent_token": {
+          "type": "string",
+          "description": "父文件夹 token 或知识库节点 token。与 parent_position 互斥。"
+        }
+      },
+      "required": [
+        "title",
+        "content"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "revision_id": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "document_id",
+        "url",
+        "revision_id"
+      ]
+    },
+    "timeoutMs": 120000
+  },
+  "lark_doc_read": {
+    "description": "读取一篇飞书文档（Docx）的内容。接受文档 URL 或 token。注意：若链接指向的是电子表格或多维表格（Base），本工具会失败，应改用飞书 Base 相关工具。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "doc": {
+          "type": "string",
+          "description": "文档 URL 或 token。"
+        },
+        "doc_format": {
+          "type": "string",
+          "description": "返回格式，默认 markdown。",
+          "enum": [
+            "markdown",
+            "xml",
+            "im-markdown"
+          ]
+        }
+      },
+      "required": [
+        "doc"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "type": "string"
+        },
+        "revision_id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_id",
+        "revision_id",
+        "content"
+      ]
+    },
+    "timeoutMs": 120000
+  },
+  "lark_doc_replace": {
+    "description": "在飞书文档中查找并替换一段文本（全局 str_replace）。适用于改错字、更新某个数值或措辞。不支持替换图片等资源块；涉及整段重写或跨 block 改动时请用 lark_doc_insert 或其它指令。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "doc": {
+          "type": "string",
+          "description": "文档 URL 或 token。"
+        },
+        "pattern": {
+          "type": "string",
+          "description": "要查找的原文（不要用于多行或整段）。"
+        },
+        "content": {
+          "type": "string",
+          "description": "替换后的文本；传空字符串表示删除该文本。"
+        }
+      },
+      "required": [
+        "doc",
+        "pattern",
+        "content"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision_id": {
+          "type": "integer"
+        },
+        "result": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "revision_id",
+        "result",
+        "url"
+      ]
+    },
+    "timeoutMs": 120000
+  },
+  "lark_doc_insert": {
+    "description": "在飞书文档中某个位置插入内容块。默认追加到文档末尾（anchor 传 -1）。可用于新增章节、补写段落、插入列表。content 使用飞书 DocxXML（如 <h2>标题</h2><p>正文</p>）。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "doc": {
+          "type": "string",
+          "description": "文档 URL 或 token。"
+        },
+        "content": {
+          "type": "string",
+          "description": "要插入的 DocxXML 内容块，例如 <h2>章节</h2><ul><li>条目</li></ul>。"
+        },
+        "anchor": {
+          "type": "string",
+          "description": "目标 block ID；\" -1\" 表示文档末尾,\"0\" 表示开头。默认 -1。"
+        }
+      },
+      "required": [
+        "doc",
+        "content"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "revision_id": {
+          "type": "integer"
+        },
+        "result": {
+          "type": "string"
+        },
+        "new_blocks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "block_id": {
+                "type": "string"
+              },
+              "block_type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "block_id",
+              "block_type"
+            ]
+          }
+        }
+      },
+      "required": [
+        "revision_id",
+        "result",
+        "new_blocks"
+      ]
+    },
+    "timeoutMs": 120000
+  },
+  "lark_doc_search": {
+    "description": "在飞书云空间中按关键词搜索文档，用来定位一篇文档的 URL/token。适用于用户只给了文档标题而没给链接的情况。",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "搜索关键词（文档标题的一部分）。"
+        },
+        "count": {
+          "type": "integer",
+          "description": "返回条数上限，默认 10。"
+        }
+      },
+      "required": [
+        "query"
+      ]
+    },
+    "outputSchema": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "title",
+              "url",
+              "type"
+            ]
+          }
+        }
+      },
+      "required": [
+        "items"
+      ]
+    },
+    "timeoutMs": 120000
+  }
+}

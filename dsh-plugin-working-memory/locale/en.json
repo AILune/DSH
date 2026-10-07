@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Working memory",
+    "description": "Externalizes the current task state into workspace files (.dsh/work/) and restores it on the first step of a session and after context compaction."
+  }
+}

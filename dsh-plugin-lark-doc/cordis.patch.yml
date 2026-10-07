@@ -1,0 +1,12 @@
+# dsh-plugin-lark-doc bundle patch: 把飞书文档工具注册进工具注册表。
+#
+# 与 dsh-experimental-voice-input-bundle 等官方 bundle 同构：一个 insert 挂载自身。
+# profile 的 cordis.patch.yml 可继续按 id: lark-doc 覆盖这里的 config（后写的层获胜），
+# 所以超时/身份等参数仍由用户的 profile 决定。
+
+- insert:
+    - id: lark-doc
+      name: dsh-plugin-lark-doc
+      config:
+        timeoutMs: 120000
+        identity: user

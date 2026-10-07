@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Cross-session memory",
+    "description": "Persist user preferences and conventions as working memory, and inject them automatically at the start of every new session."
+  }
+}

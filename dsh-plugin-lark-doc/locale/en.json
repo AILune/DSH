@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Feishu Docs",
+    "description": "Read and write Feishu (Lark) Docx documents through lark-cli: create, read, replace text, insert blocks, and search."
+  }
+}
